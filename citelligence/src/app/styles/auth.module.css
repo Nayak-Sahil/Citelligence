@@ -1,0 +1,194 @@
+.mainWrapper {
+    width: 100vw;
+    height: 100vh;
+    padding-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.authLeftWrap {
+    width: 45%;
+    height: 100%;
+    padding: 15px;
+    border-right: 1px solid var(--brdr);
+    background-image: url(../../../public/blurry_background.svg);
+    background-color: transparent;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background: hsla(262, 100%, 59%, 1);
+    background: linear-gradient(180deg, rgb(149, 88, 255)20%, hsla(262, 100%, 78%, 1) 100%);
+    background: -moz-linear-gradient(180deg, rgb(149, 88, 255) 20%, hsla(262, 100%, 78%, 1) 100%);
+    background: -webkit-linear-gradient(180deg, rgb(149, 88, 255) 20%, hsla(262, 100%, 78%, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#7C2FFF", endColorstr="#B78DFF", GradientType=1); */
+}
+.authLeftGlass{
+    width: 90%;
+    height: 90%;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.744);
+    box-shadow: 0px 0px 15px rgba(234, 234, 234, 0.37);
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.authLeftHead{
+    width: 100%;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+}
+.authLeftHead h1{
+    width: 90%;
+    font-size: 16px;
+    text-align: center;
+    font-weight: lighter;
+    line-height: 30px;
+}
+
+.authFeatCardWrap{
+    width: 100%;
+    height: max-content;
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: space-evenly;
+}
+.authFeatCard{
+    background-color: rgba(255, 255, 255, 0.149);
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    width: 50%;
+    height: max-content;
+    padding: 15px 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-right: 10px;
+    box-shadow: 0 0 5px var(--brdr);
+}
+.authFeatCard:last-child{
+    margin-right: 0;
+}
+.authCardHead{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: var(--themeText);
+    /* color: #009688; */
+}
+.authCardHead i{
+    margin-right: 8px;
+    /* color: #009688; */
+}
+.authCardDescrp{
+    font-size: 12px;
+    color: var(--descrp);
+}
+
+
+/* Right Part of Authentication */
+.authRightWrap {
+    width: 50%;
+    height: 100%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.authHead {
+    width: 100%;
+    height: max-content;
+    /* border: 1px solid black; */
+    padding: 5px 15px;
+}
+.authHead h1 {
+    font-weight: lighter;
+    font-size: 25px;
+    color: var(--roughDark);
+    margin-bottom: 15px;
+}
+.authHighlight {
+    font-weight: lighter;
+    color: var(--themeText);
+}
+.authHead h2 {
+    font-weight: lighter;
+    font-size: 20px;
+    color: var(--roughDark);
+    line-height: 40px;
+}
+.authHead p {
+    font-size: 14px;
+    color: var(--descrp);
+    letter-spacing: 1.2px;
+}
+.authBtnsWrap {
+    width: 100%;
+    height: 300px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    /* border: 1px solid var(--brdr); */
+    border-radius: 15px;
+}
+.authDiffBtns {
+    width: 320px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: white;
+    padding: 12px 15px;
+    border-radius: 5px;
+    border: none;
+    letter-spacing: 1.1px;
+    color: var(--roughDark);
+    cursor: pointer;
+    font-size: 14px;
+    transition: .2s ease-in-out;
+    box-shadow: inset 0 0 0 2px #c4c4c461;
+}
+.authDiffBtns i{
+    font-size: 16px;
+}
+.authDiffBtns:hover {
+    background-color: #f9f9f9c7;
+}
+.authBtnIcon {
+    width: 10%;
+}
+.authBtnTxt {
+    width: 80%;
+}
+.clientAgreeText {
+    width: 70%;
+    height: max-content;
+    text-align: center;
+    letter-spacing: 1.2px;
+    font-size: 13px;
+}
+
+@media screen and (max-width: 800px){
+    .authLeftWrap{
+        display: none;
+    }
+    .authRightWrap{
+        width: 100%;
+    }
+}

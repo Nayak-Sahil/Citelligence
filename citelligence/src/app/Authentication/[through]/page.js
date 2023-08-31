@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import MainRightCompo from '@/components/authComponents/MainRightCompo'
+import MainRightCompo from '@/components/authComponents/AuthRight'
 
 const page = ({ params }) => {
   console.log(params.through)

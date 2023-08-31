@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Noto+Sans+JP&display=swap');
+
+*{
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: bold;
+    letter-spacing: 1.1px;
+}
+:root{
+    --brdr: rgba(226, 226, 226, 0.953);
+    --themeText: #6a11ff;
+    --roughDark: rgba(20, 20, 20, 0.968);
+    --descrp: #343434df;
+}

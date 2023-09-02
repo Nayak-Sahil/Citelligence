@@ -1,5 +1,5 @@
-import AuthLeft from '@/components/authComponents/AuthLeft';
-import AuthRight from '@/components/authComponents/AuthRight'
+import AuthHero from '@/components/authComponents/AuthHero';
+import AuthOptns from '@/components/authComponents/AuthOptns'
 import React from 'react'
 import './auth.css';
 import auth from '../styles/auth.module.css'
@@ -12,14 +12,13 @@ export const metadata = {
 }
 
 export default function page() {
-  console.log(auth)
   return (
     <main className={auth.mainWrapper}>
       <section className={auth.authLeftWrap}>
-        <AuthLeft />
+        <AuthHero />
       </section>
       <section className={auth.authRightWrap}>
-        <AuthRight />
+        <AuthOptns />
       </section>
     </main>
   )

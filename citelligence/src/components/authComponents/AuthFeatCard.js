@@ -7,8 +7,7 @@ export default function AuthFeatCard({title, descrp}) {
   return (
     <div className={auth.authFeatCard}>
         <div className={auth.authCardHead}>
-            <i class="fa-regular fa-circle-check"></i>
-            {/* <FontAwesomeIcon icon={faCircleCheck} /> */}
+            <i className="fa-regular fa-circle-check"></i>
             <p>{title}</p>
         </div>
         <p className={auth.authCardDescrp}>{descrp}</p>

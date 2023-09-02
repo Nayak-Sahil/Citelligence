@@ -3,19 +3,20 @@
 import React from 'react'
 import { faGoogle } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope, faFingerprint, faIdCardClip, faMobile, faMobileAndroid } from '@fortawesome/free-solid-svg-icons'
+import { faFingerprint, faIdCardClip, faMobile, faMobileScreenButton } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 // import next from '../../../public/citelligence1.png'
 import auth from '../../app/styles/auth.module.css'
 
-const AuthRight = () => {
+const AuthOptns = () => {
     return (
         <>
             <div className={auth.authHead}>
                 {/* <Image src={next} className="mx-16" width={100} alt='logo'/> */}
                 <h1>Cite<span className={auth.authHighlight}>lligence</span></h1>
-                <h2>Login or Signup in <span className={auth.authHighlight}>seconds</span>.</h2>
+                <h2>🙋‍♂️ <span>Welcome User!</span> Login or Signup Here.</h2>
                 <p>Use your email or another service to continue with Citelligence (it's free)!</p>
             </div>
 
@@ -24,7 +25,7 @@ const AuthRight = () => {
                 <ButtonComponent text='Continue with Meripehchaan' icon={faFingerprint} />
                 {/* <ButtonComponent text='Continue with Aadhar' icon={faIdCardClip} /> */}
                 <ButtonComponent text='Continue with Email' icon={faEnvelope} type={"Email"} />
-                <ButtonComponent text='Continue with Mobile' icon={faMobile} type={"Mobile"} />
+                <ButtonComponent text='Continue with Mobile' icon={faMobileScreenButton} type={"Mobile"} />
             </div>
 
             <div className={auth.clientAgreeText}>
@@ -35,7 +36,7 @@ const AuthRight = () => {
     )
 }
 
-export default AuthRight;
+export default AuthOptns;
 
 
 const ButtonComponent = ({ text, icon, type }) => {
@@ -51,9 +52,9 @@ const ButtonComponent = ({ text, icon, type }) => {
         <button className={auth.authDiffBtns} onClick={() => { handleClick(type) }}>
             <span className={auth.authBtnIcon}>
             {
-                (type == "Email" || type == "Mobile") ? 
-                    (type == "Email") ? <i class="fa-regular fa-envelope"></i> : (type == "Mobile") ? <i class="fa-solid fa-mobile-screen"></i> : ""
-                : 
+                // (type == "Email" || type == "Mobile") ? 
+                //     (type == "Email") ? <i className="fa-regular fa-envelope"></i> : (type == "Mobile") ? <i className="fa-solid fa-mobile-screen"></i> : ""
+                // : 
                     <FontAwesomeIcon width={25} className='mx-2 text-2xl text-[#004fd6]' icon={icon}/>
             }
             </span>

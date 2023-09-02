@@ -1,4 +1,4 @@
-.mainWrapper {
+.mainWrapper, .emailAuthWrap {
     width: 100vw;
     height: 100vh;
     padding-right: 20px;
@@ -7,30 +7,26 @@
     justify-content: space-between;
 }
 
-.authLeftWrap {
+.authLeftWrap, .emailAuthLeft {
     width: 45%;
     height: 100%;
     padding: 15px;
     border-right: 1px solid var(--brdr);
-    background-image: url(../../../public/blurry_background.svg);
+    background-image: url(../../../public/auth-bg3.jpg);
     background-color: transparent;
     background-size: cover;
     background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background: hsla(262, 100%, 59%, 1);
-    background: linear-gradient(180deg, rgb(149, 88, 255)20%, hsla(262, 100%, 78%, 1) 100%);
-    background: -moz-linear-gradient(180deg, rgb(149, 88, 255) 20%, hsla(262, 100%, 78%, 1) 100%);
-    background: -webkit-linear-gradient(180deg, rgb(149, 88, 255) 20%, hsla(262, 100%, 78%, 1) 100%);
-    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#7C2FFF", endColorstr="#B78DFF", GradientType=1); */
 }
-.authLeftGlass{
+.authLeftGlass, .instrtSectBox{
     width: 90%;
     height: 90%;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.744);
-    box-shadow: 0px 0px 15px rgba(234, 234, 234, 0.37);
+    background: rgba(255, 255, 255, 0.689);
+    box-shadow: 8px 8px 32px 0 rgba(146, 146, 146, 0.37);
+    border: 1px solid rgba(243, 243, 243, 0.876);
     backdrop-filter: blur( 4px );
     -webkit-backdrop-filter: blur( 4px );
     border-radius: 10px;
@@ -40,6 +36,35 @@
     align-items: center;
     justify-content: space-evenly;
 }
+.instrtSectBox h1{
+    font-size: 19px;
+    letter-spacing: 1.2px;
+    color: var(--roughDark);
+    text-align: left;
+    width: 90%;
+    line-height: 30px;
+    position: relative;
+    top: 20px;
+    font-weight: lighter;
+}
+.instrtCtnt{
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.instrtCtnt p{
+    width: 80%;
+    font-size: 14px;
+    text-align: center;
+    color: var(--descrp);
+    letter-spacing: 1.2px;
+    position: relative;
+    bottom: 20px;
+}
+
 .authLeftHead{
     width: 100%;
     height: max-content;
@@ -87,20 +112,20 @@
     font-size: 14px;
     margin-bottom: 5px;
     color: var(--themeText);
-    /* color: #009688; */
 }
 .authCardHead i{
     margin-right: 8px;
-    /* color: #009688; */
 }
 .authCardDescrp{
+    width: 100%;
     font-size: 12px;
     color: var(--descrp);
+    text-align: left;
 }
 
 
 /* Right Part of Authentication */
-.authRightWrap {
+.authRightWrap, .emailAuthRight {
     width: 50%;
     height: 100%;
     padding: 15px;
@@ -109,7 +134,13 @@
     align-items: center;
     justify-content: space-evenly;
 }
-.authHead {
+.emailAuthRight{
+    width: 45%;
+}
+.emailAuthLeft{
+    width: 52%;
+}
+.authHead, .authEmailHead{
     width: 100%;
     height: max-content;
     /* border: 1px solid black; */
@@ -120,21 +151,50 @@
     font-size: 25px;
     color: var(--roughDark);
     margin-bottom: 15px;
+    padding-bottom: 10px;
+    width: 30px;
+    border-bottom: 3px solid var(--themeText);
 }
 .authHighlight {
     font-weight: lighter;
     color: var(--themeText);
 }
-.authHead h2 {
+.authHead h2, .authEmailHead h2 {
     font-weight: lighter;
     font-size: 20px;
     color: var(--roughDark);
     line-height: 40px;
 }
-.authHead p {
+.authEmailHead h2{
+    font-size: 18px;
+}
+.authHead p, .authEmailHead p {
     font-size: 14px;
     color: var(--descrp);
     letter-spacing: 1.2px;
+}
+.authEmailHead p {
+    font-size: 12px;
+}
+.backToDiffOptBtn{
+    text-decoration: none;
+    color: var(--roughDark);
+    font-size: 12px;
+    width: max-content;
+    box-shadow: inset 0 0 0 2px #c4c4c461;
+    padding: 8px 15px;
+    border-radius: 10px;
+    letter-spacing: 1.2px;
+    margin-top: 10px;
+    cursor: pointer;
+    display: inline-block;
+}
+.backToDiffOptBtn:hover{
+    background-color: rgba(236, 236, 236, 0.856);
+}
+.backToDiffOptBtn i{
+    margin-right: 8px;
+    font-size: 14px;
 }
 .authBtnsWrap {
     width: 100%;
@@ -191,4 +251,239 @@
     .authRightWrap{
         width: 100%;
     }
+}
+
+/* Authentication Email Page */
+.authEmailVerifyWrap{
+    width: 95%;
+    height: 350px;
+    border: 1px solid var(--brdr);
+    border-radius: 10px;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.authEmailInptSec, .authEmailSignUpInptSec{
+    width: 100%;
+    height: 250px;
+    padding: 0 10px;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.emailSignUpBoxWrap{
+    width: 100%;
+    height: 45px;
+    padding: 5px 20px;
+    border: 1px solid var(--brdr);
+    margin: 5px auto;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.emailBoxWrap{
+    width: 100%;
+    height: 85px;
+    padding: 8px;
+    border: 1px solid var(--brdr);
+    margin: 5px auto;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.emailBoxWrap .emailIconWrap, .emailSignUpBackWrap{
+    color: var(--roughDark);
+    font-size: 20px;
+}
+.emailSignUpBoxWrap:hover{
+    box-shadow: inset 0 0 0 1px var(--brdr);
+}
+.emailSignUpBackWrap{
+    margin-right: 15px;
+    font-size: 12px;
+}
+.emailSignUpBackWrap a{
+    text-decoration: none;
+    color: var(--roughDark);
+}
+.emailSignUpBackWrap i{
+    font-size: 16px;
+    margin-right: 8px;
+    position: relative;
+    top: 2px;
+}
+.emailSignUpLabelWrap{
+    width: max-content;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 13px;
+    color: var(--success);
+}
+.emailSignUpLabelWrap p{
+    letter-spacing: 1.2px;
+    width: max-content;
+}
+.emailSignUpLabelWrap p i{
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+.emailBoxWrap .emailInptWrap{
+    width: 85%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+.emailBoxWrap .emailInptWrap label{
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: var(--themeText);
+    margin-left: 3px;
+}
+.rqrdInpt{
+    color: var(--error);
+}
+.emailBoxWrap .emailInptWrap input{
+    width: 100%;
+    height: 35px;
+    margin-top: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    border: none;
+    outline: none;
+    color: var(--roughDark);
+    font-weight: bold;
+    letter-spacing: 1px;
+    background-color: #f1f1f196;
+}
+
+.verifynErroWrap{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.verfyEmailBtn, .OtpSignupEmailBtn, .pwdSignUpEmailBtn, .otpInptWrapper button{
+    background-color: white;
+    padding: 10px 25px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px var(--brdr);
+    border: 1px solid var(--brdr);
+    letter-spacing: 1.2px;
+    color: var(--roughDark);
+    cursor: pointer;
+}
+.OtpSignupEmailBtn, .pwdSignUpEmailBtn{
+    width: 250px;
+    text-align: left;
+    font-size: 12px;
+    padding: 13px 25px;
+    color: var(--roughDark);
+    position: relative;
+}
+.otpInptWrapper button{
+    font-size: 12px;
+}
+.OtpSignupEmailBtn:hover, .pwdSignUpEmailBtn:hover, .otpInptWrapper button:hover{
+    box-shadow:inset 2px 2px 2px var(--brdr);
+    color: var(--descrp);
+}
+.OtpSignupEmailBtn i, .pwdSignUpEmailBtn i, .otpInptWrapper button i{
+    color: var(--descrp);
+    margin-right: 5px;
+    font-size: 14px;
+}
+.signUpLstPwdLabel{
+    width: 100%;
+    text-align: right;
+    font-size: 12px;
+    text-decoration: none;
+    color: var(--themeText);
+    cursor: pointer;
+}
+.signUpLstPwdLabel:hover{
+    color: var(--descrp);
+}
+.verfyEmailBtn i{
+    margin-left: 5px;
+}
+
+.validtMsg{
+    color: var(--error);
+    font-weight: bold;
+    letter-spacing: 1.2px;
+    font-size: 13px;
+    padding-right: 10px;
+}
+.authSignUpPrcs{
+    width: 100%;
+    margin: 8px 0;
+    padding: 0 8px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1.2px;
+    color: var(--roughDark);
+}
+.authSignUpPrcs span{
+    font-weight: bold;
+}
+
+.signUpInptWrapper{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 8px 0;
+}
+.otpInptWrapper{
+    width: 100%;
+    height: max-content;
+    border: 1px solid var(--brdr);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+.otpInptWrapper legend{
+    font-size: 12px;
+    padding: 0 5px;
+    margin: 0 10px;
+}
+.otpInptWrapper input{
+    border: none;
+    outline: none;
+    height: 40px;
+    width: 70%;
+    padding: 0 10px;
+    
+    border-radius: 5px;
+    font-size: 12px;
+    color: var(--roughDark);
+    background-color: #f1f1f196;
+}
+.authPrcsOptWrap{
+    width: 100%;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
 }

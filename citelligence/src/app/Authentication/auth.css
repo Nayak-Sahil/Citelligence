@@ -11,4 +11,6 @@
     --themeText: #6a11ff;
     --roughDark: rgba(20, 20, 20, 0.968);
     --descrp: #343434df;
+    --error: rgb(255, 63, 63);
+    --success: rgb(2, 157, 74);
 }

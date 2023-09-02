@@ -5,6 +5,9 @@ import authContext from '@/contexts/AuthContext'
 import { useFormik } from 'formik'
 import { authEmailSchema } from '@/schemas/authSchema'
 import { authMobileSchema } from '@/schemas/authSchema'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAnglesRight, faMobileScreenButton, faTriangleExclamation } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
 
 export default function EmailOMoVerify({ authOpt }) {
     const getAuthContxt = useContext(authContext);
@@ -42,7 +45,10 @@ export default function EmailOMoVerify({ authOpt }) {
                 <div className={auth.emailBoxWrap}>
                     <div className={auth.emailIconWrap}>
                         {
-                            (authOpt == "Email") ? (authFormik.errors.authEmailInpt == "The provided email isn't valid!") ? <i className={`fa-solid fa-triangle-exclamation ${auth.errorIconColor}`}></i> : <i className="far fa-envelope"></i> : <i class="fa-solid fa-mobile-screen-button"></i>
+                            (authOpt == "Email") ? (authFormik.errors.authEmailInpt == "The provided email isn't valid!") ? 
+                            <FontAwesomeIcon icon={faTriangleExclamation}  style={{color:`rgb(255, 63, 63)`}}/>
+                            :
+                            <FontAwesomeIcon icon={faEnvelope} /> : <FontAwesomeIcon icon={faMobileScreenButton} />
                         }
                     </div>
                     <div className={auth.emailInptWrap}>
@@ -60,7 +66,9 @@ export default function EmailOMoVerify({ authOpt }) {
                     </div>
                 </div>
                 <div className={auth.verifynErroWrap}>
-                    <button onClick={isAlreadyHaveAcc} type='submit' className={auth.verfyEmailBtn}>Next <i class="fa-solid fa-angles-right"></i></button>
+                    <button onClick={isAlreadyHaveAcc} type='submit' className={auth.verfyEmailBtn}>Next 
+                    <FontAwesomeIcon icon={faAnglesRight} style={{marginLeft:"5px"}}/>
+                    </button>
                     
                     <p className={auth.validtMsg}>{(authOpt == "Email") ? authFormik.errors.authEmailInpt : authFormik.errors.authMobileInpt}</p>
                 </div>

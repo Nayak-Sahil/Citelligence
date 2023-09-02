@@ -5,6 +5,8 @@ import EmailOMoVerify from './EmailOMoVerify'
 import EmailOMoAuth from './EmailOMoAuth'
 import authContext from '@/contexts/AuthContext'
 import Link from 'next/link'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons'
 
 
 // Email & Mobile Auth Page's Right Part Dynamic Component
@@ -16,7 +18,9 @@ export default function EmailAuthDn({authOpt}) {
             <div className={auth.authHead}>
                 <h1>Cite<span className={auth.authHighlight}>lligence</span></h1>
                 <p>Welcome to Citelligence!, Verify Your Identity.</p>
-                <Link className={auth.backToDiffOptBtn} href="./"><i class="fa-solid fa-arrow-left-long"></i> Change Authentication Option</Link>
+                <Link className={auth.backToDiffOptBtn} href="./">
+                    <FontAwesomeIcon icon={faArrowLeftLong} style={{marginRight:"8px",fontSize:"14px"}} /> Change Authentication Option
+                    </Link>
             </div>
 
             <div className={auth.authEmailVerifyWrap}>

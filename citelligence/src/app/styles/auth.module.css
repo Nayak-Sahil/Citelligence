@@ -113,9 +113,6 @@
     margin-bottom: 5px;
     color: var(--themeText);
 }
-.authCardHead i{
-    margin-right: 8px;
-}
 .authCardDescrp{
     width: 100%;
     font-size: 12px;
@@ -191,10 +188,6 @@
 }
 .backToDiffOptBtn:hover{
     background-color: rgba(236, 236, 236, 0.856);
-}
-.backToDiffOptBtn i{
-    margin-right: 8px;
-    font-size: 14px;
 }
 .authBtnsWrap {
     width: 100%;
@@ -314,12 +307,6 @@
     text-decoration: none;
     color: var(--roughDark);
 }
-.emailSignUpBackWrap i{
-    font-size: 16px;
-    margin-right: 8px;
-    position: relative;
-    top: 2px;
-}
 .emailSignUpLabelWrap{
     width: max-content;
     height: 100%;
@@ -332,10 +319,6 @@
 .emailSignUpLabelWrap p{
     letter-spacing: 1.2px;
     width: max-content;
-}
-.emailSignUpLabelWrap p i{
-    margin-right: 5px;
-    font-size: 16px;
 }
 
 .emailBoxWrap .emailInptWrap{
@@ -403,11 +386,6 @@
     box-shadow:inset 2px 2px 2px var(--brdr);
     color: var(--descrp);
 }
-.OtpSignupEmailBtn i, .pwdSignUpEmailBtn i, .otpInptWrapper button i{
-    color: var(--descrp);
-    margin-right: 5px;
-    font-size: 14px;
-}
 .signUpLstPwdLabel{
     width: 100%;
     text-align: right;
@@ -418,9 +396,6 @@
 }
 .signUpLstPwdLabel:hover{
     color: var(--descrp);
-}
-.verfyEmailBtn i{
-    margin-left: 5px;
 }
 
 .validtMsg{

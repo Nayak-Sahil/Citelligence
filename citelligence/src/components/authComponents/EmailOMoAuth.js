@@ -2,25 +2,33 @@ import React, { useContext, useState } from 'react'
 import auth from '../../app/styles/auth.module.css'
 import AuthOtpNPwd from './AuthOtpNPwd'
 import authContext from '@/contexts/AuthContext';
-export default function EmailOMoAuth({ isSignUp, title, description}) {
+export default function EmailOMoAuth({ isSignUp, title, description }) {
   const getAuthContxt = useContext(authContext);
-  console.log(getAuthContxt);
+
   const backToEmailChange = () => {
     getAuthContxt.update({});
   }
 
   const [authPrcs, setAuthPrcs] = useState(null);
-  console.warn(authPrcs);
-  const processOtpAuth = () => {
-    setAuthPrcs({ isOtpPrcs: true });
-  }
-  
-  const backToAuthPrcs = ()=>{
+
+  // back to OTP and PWD Options
+  const backToAuthPrcs = () => {
     setAuthPrcs(null);
   }
 
+  // process to OTP for auth
+  const processOtpAuth = () => {
+    setAuthPrcs({ isOtpPrcs: true });
+  }
+
+  // process to password for auth
   const processPwdAuth = () => {
     setAuthPrcs({ isOtpPrcs: false });
+  }
+
+  // process to create new password
+  const forgetPwdPrcs = () => {
+    setAuthPrcs({ isForgetPwd: true});
   }
 
   return (
@@ -42,7 +50,14 @@ export default function EmailOMoAuth({ isSignUp, title, description}) {
         </div>
 
         {
-          (authPrcs == null) ? <AuthPrcsOpt processOtpAuth={processOtpAuth} processPwdAuth={processPwdAuth} isSignUp={isSignUp} /> : (authPrcs.isOtpPrcs) ? <AuthOtpNPwd backToAuthPrcs={backToAuthPrcs} isOtpPrcsType={authPrcs.isOtpPrcs} /> : <AuthOtpNPwd backToAuthPrcs={backToAuthPrcs} isOtpPrcsType={authPrcs.isOtpPrcs} />
+          (authPrcs == null) ? 
+          <AuthPrcsOpt processOtpAuth={processOtpAuth} processPwdAuth={processPwdAuth} isSignUp={isSignUp} forgetPwdPrcs={(!isSignUp) ? forgetPwdPrcs : ""} /> : (authPrcs.isOtpPrcs != undefined && authPrcs.isOtpPrcs == true) ? 
+          <AuthOtpNPwd backToAuthPrcs={backToAuthPrcs} isOtpPrcsType={authPrcs.isOtpPrcs} /> :(authPrcs.isOtpPrcs != undefined && authPrcs.isOtpPrcs == false) ?
+          <AuthOtpNPwd backToAuthPrcs={backToAuthPrcs} isOtpPrcsType={authPrcs.isOtpPrcs} /> : ""
+        }
+
+        {
+          (authPrcs != null && authPrcs.isForgetPwd) ? <AuthOtpNPwd backToAuthPrcs={backToAuthPrcs} isFgtPwdPrcs={authPrcs.isForgetPwd}/> : ""
         }
       </div>
     </>
@@ -51,7 +66,7 @@ export default function EmailOMoAuth({ isSignUp, title, description}) {
 
 
 
-const AuthPrcsOpt = ({isSignUp, processOtpAuth, processPwdAuth}) => {
+const AuthPrcsOpt = ({ isSignUp, processOtpAuth, processPwdAuth, forgetPwdPrcs }) => {
   return (
     <div className={auth.authPrcsOptWrap}><p className={auth.authSignUpPrcs}>Would you like to proceed with <span className={auth.authHighlight}>OTP</span> or a <span className={auth.authHighlight}>Password</span>?</p>
 
@@ -59,7 +74,7 @@ const AuthPrcsOpt = ({isSignUp, processOtpAuth, processPwdAuth}) => {
 
       <button onClick={processPwdAuth} type='button' className={auth.pwdSignUpEmailBtn}><i class="fa-solid fa-key"></i> {(isSignUp) ? "Sign Up" : "Sign In"} with Password</button>
 
-      {(isSignUp) ? "" : <a href="#" className={auth.signUpLstPwdLabel}><i class="fa-solid fa-key"></i> Lost Password (New Key)?</a>}
+      {(isSignUp) ? "" : <p onClick={forgetPwdPrcs} className={auth.signUpLstPwdLabel}><i class="fa-solid fa-key"></i> Lost Password (New Key)?</p>}
     </div>
   );
 }

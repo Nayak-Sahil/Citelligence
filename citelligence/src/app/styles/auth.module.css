@@ -487,3 +487,6 @@
     align-items: flex-start;
     justify-content: space-evenly;
 }
+.errorIconColor{
+    color: var(--error);
+}

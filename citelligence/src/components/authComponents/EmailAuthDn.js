@@ -1,5 +1,5 @@
 "use client"
-import React, {useContext} from 'react'
+import React, {useContext, useMemo} from 'react'
 import auth from '../../app/styles/auth.module.css'
 import EmailOMoVerify from './EmailOMoVerify'
 import EmailOMoAuth from './EmailOMoAuth'
@@ -7,12 +7,18 @@ import authContext from '@/contexts/AuthContext'
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons'
+import AuthProfile from './AuthProfile'
 
 
 // Email & Mobile Auth Page's Right Part Dynamic Component
 export default function EmailAuthDn({authOpt}) {
     const getAuthContxt = useContext(authContext);
-    console.warn(getAuthContxt.state);
+    
+    useMemo(()=>{
+        (getAuthContxt.state.isNewAccDone == undefined) ?
+        getAuthContxt.update({ }) : ""
+    }, []);
+
     return (
         <>
             <div className={auth.authHead}>
@@ -25,7 +31,7 @@ export default function EmailAuthDn({authOpt}) {
 
             <div className={auth.authEmailVerifyWrap}>
                 {
-                   (getAuthContxt.state.isAlreadyHaveAcc === undefined) ? <EmailOMoVerify authOpt={authOpt} /> : (getAuthContxt.state.isAlreadyHaveAcc === true) ? <EmailOMoAuth isSignUp={false} title="🎉 Great!, You have an already account!" description="Please, Sign In Here to access your account." /> : <EmailOMoAuth isSignUp={true} title="🎉 Let's Get Started! Create Your Account Today!" description="Please, Verify your Email." />  
+                   (getAuthContxt.state.isNewAccDone != undefined && getAuthContxt.state.isNewAccDone === true) ? <AuthProfile /> : (getAuthContxt.state.isAlreadyHaveAcc === undefined) ? <EmailOMoVerify authOpt={authOpt} /> : (getAuthContxt.state.isAlreadyHaveAcc === true) ? <EmailOMoAuth isSignUp={false} title="🎉 Great!, You have an already account!" description="Please, Sign In Here to access your account." /> : <EmailOMoAuth isSignUp={true} title="🎉 Let's Get Started! Create Your Account Today!" description="Please, Verify your Email." />  
                 }
             </div>
         </>

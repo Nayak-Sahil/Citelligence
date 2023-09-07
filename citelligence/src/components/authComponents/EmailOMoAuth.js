@@ -91,7 +91,7 @@ const AuthPrcsOpt = ({ isSignUp, processOtpAuth, processPwdAuth, forgetPwdPrcs }
         <FontAwesomeIcon icon={faCommentDots} 
           style={{
             color:"#343434df",
-            marginRight: "5px",
+            marginRight: "10px",
             fontSize: "14px"
           }}
         />
@@ -102,7 +102,7 @@ const AuthPrcsOpt = ({ isSignUp, processOtpAuth, processPwdAuth, forgetPwdPrcs }
       <FontAwesomeIcon icon={faKey} 
           style={{
             color:"#343434df",
-            marginRight: "5px",
+            marginRight: "10px",
             fontSize: "14px"
           }}
         />

@@ -14,7 +14,7 @@ export default function EmailAuthIns(props) {
     <section className={auth.instrtSectBox}>
       <h1>Get access of simplified form of guidlines and grab the benefit.</h1>
       <div className={auth.instrtCtnt}>
-        <Image src={(props.step == "checkAcc") ? checkAccount : (props.step == "emailVerify") ? emailVerify : (props.step == "signUp") ? emailSignUp : (props.step == "signIn") ? emailSignIn : ""} width={350}/>
+        <Image src={(props.step == "checkAcc") ? checkAccount : (props.step == "emailVerify") ? emailVerify : (props.step == "signUp") ? emailSignUp : (props.step == "signIn") ? emailSignIn : ""} width={350} alt="Authentication Process"/>
         <p id='instrtLabel'>{authInstruction.innerText}</p>
       </div>
     </section>

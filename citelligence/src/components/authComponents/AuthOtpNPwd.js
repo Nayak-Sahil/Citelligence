@@ -1,22 +1,27 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import auth from '../../app/styles/auth.module.css'
 import { useFormik } from 'formik';
 import { authPwdSchema } from '@/schemas/authSchema';
 import { authOtpSchema } from '@/schemas/authSchema';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeftLong, faEllipsis } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeftLong, faEllipsis, faKey } from '@fortawesome/free-solid-svg-icons';
 import { faCircleCheck } from '@fortawesome/free-regular-svg-icons';
+import authContext from '@/contexts/AuthContext';
 
 export default function AuthOtpNPwd({ isOtpPrcsType, backToAuthPrcs, isFgtPwdPrcs }) {
   // Form Handling:
   const initValObj = (isOtpPrcsType) ? { authOtpInpt: "" } : { authPwdInpt: "" };
   const validationSchema = (isOtpPrcsType) ? authOtpSchema : authPwdSchema;
 
+  const getAuthContxt = useContext(authContext);
+
   const authFormik = useFormik({
     initialValues: initValObj,
     validationSchema: validationSchema,
     onSubmit: (values) => {
       console.info("------ OTP OR PASSWORD Values", values);
+      getAuthContxt.update({ isNewAccDone: true });
+
     },
   })
   console.info(authFormik.errors);

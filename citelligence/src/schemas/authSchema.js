@@ -25,3 +25,10 @@ export const authPwdSchema = Yup.object({
     .matches(/[A-Z]/, 'Password requires an uppercase letter')
     .matches(/[^\w]/, 'Password requires a symbol')
 })
+
+export const authAccPrfSchema = Yup.object({
+    fnameInpt: Yup.string().required("Please, Enter your First Name"),
+    lnameInpt: Yup.string().required("Please, Enter your Last Name"),
+    dobInpt: Yup.date().required("Date of Birth Field is required!").max(new Date(), "Date of birth cannot be in the future!"),
+    zSelInpt: Yup.string().required("Select the Gender!")
+})

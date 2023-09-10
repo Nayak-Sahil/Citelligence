@@ -52,7 +52,7 @@ export default function EmailOMoVerify({ authOpt }) {
                         }
                     </div>
                     <div className={auth.emailInptWrap}>
-                        <label htmlFor="newUsrEmailIn">
+                        <label htmlhtmlFor="newUsrEmailIn">
                             {
                                 (authOpt == "Email") ? "Email Address" : "Mobile No."
                             }<span className={auth.rqrdInpt}>*</span>

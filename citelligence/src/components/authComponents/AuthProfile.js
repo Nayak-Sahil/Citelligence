@@ -38,7 +38,7 @@ export default function AuthProfile() {
             <div className={auth.prfInptsWrap}>
                 <div className={auth.nameBoxWrap}>
                     <div className={auth.fnameInptWrap}>
-                        <label htmlFor="fnameInpt">
+                        <label htmlhtmlFor="fnameInpt">
                             First Name<span className={auth.rqrdInpt}>*</span>
                         </label>
 
@@ -47,7 +47,7 @@ export default function AuthProfile() {
                         <p className={auth.validtMsg}>{authFormik.errors.fnameInpt}</p>
                     </div>
                     <div className={auth.lnameInptWrap}>
-                        <label htmlFor="lnameInpt">
+                        <label htmlhtmlFor="lnameInpt">
                             Last Name<span className={auth.rqrdInpt}>*</span>
                         </label>
 
@@ -58,7 +58,7 @@ export default function AuthProfile() {
                 </div>
                 <div className={auth.dobBoxWrap}>
                     <div className={auth.dobInptWrap}>
-                        <label htmlFor="dobInpt">
+                        <label htmlhtmlFor="dobInpt">
                             Date of Birth <span className={auth.rqrdInpt}>*</span>
                         </label>
 
@@ -67,7 +67,7 @@ export default function AuthProfile() {
                         <p className={auth.validtMsg}>{authFormik.errors.dobInpt}</p>
                     </div>
                     <div className={auth.zInptWrap}>
-                        <label htmlFor="zInpt">
+                        <label htmlhtmlFor="zInpt">
                             Gender <span className={auth.rqrdInpt}>*</span>
                         </label>
 

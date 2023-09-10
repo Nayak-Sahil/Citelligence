@@ -1,4 +1,4 @@
-import '../globals.css'
+import './globals.css'
 // import '../styles/auth.css'
 import { Inter } from 'next/font/google'
 import { config } from '@fortawesome/fontawesome-svg-core'

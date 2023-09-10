@@ -185,6 +185,8 @@
     margin-top: 10px;
     cursor: pointer;
     display: inline-block;
+    border: none;
+    background-color: white;
 }
 .backToDiffOptBtn:hover{
     background-color: rgba(236, 236, 236, 0.856);

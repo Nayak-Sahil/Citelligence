@@ -1,81 +1,134 @@
+// import { faAt, faEarth, faLocationDot, faPhone } from "@fortawesome/free-solid-svg-icons"
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+
+// const ContactUs = () => {
+//     return (
+//         <section class="bg-white dark:bg-gray-900">
+//             <div class="container grid gap-8 px-6 py-12 mx-auto lg:grid-cols-3">
+//                 <div>
+//                     <p class="font-medium text-blue-500 dark:text-blue-400">Contact us</p>
+
+//                     <h1 class="mt-2 text-2xl font-semibold text-gray-800 md:text-3xl dark:text-white">We’d love to hear from you</h1>
+
+//                     <p class="mt-3 text-gray-500 dark:text-gray-400">Our friendly team is always here to chat.</p>
+//                 </div>
+
+//                 <div class="grid grid-cols-1 gap-12 lg:col-span-2 sm:grid-cols-2 ">
+//                     <div class="p-4 rounded-lg bg-blue-50 md:p-6 dark:bg-gray-800">
+//                         <span class="inline-block p-3 text-blue-500 rounded-lg bg-blue-100/80 dark:bg-gray-700">
+//                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+//                                 <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+//                             </svg>
+//                         </span>
+
+//                         <h2 class="mt-4 text-base font-medium text-gray-800 dark:text-white">Chat to sales</h2>
+//                         <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Speak to our friendly team.</p>
+//                         <p class="mt-2 text-sm text-blue-500 dark:text-blue-400">hello@merakiui.com</p>
+//                     </div>
+
+//                     <div class="p-4 rounded-lg bg-blue-50 md:p-6 dark:bg-gray-800">
+//                         <span class="inline-block p-3 text-blue-500 rounded-lg bg-blue-100/80 dark:bg-gray-700">
+//                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+//                                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+//                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+//                             </svg>
+//                         </span>
+
+//                         <h2 class="mt-4 text-base font-medium text-gray-800 dark:text-white">Chat to support</h2>
+//                         <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">We’re here to help.</p>
+//                         <p class="mt-2 text-sm text-blue-500 dark:text-blue-400">Start new chat</p>
+//                     </div>
+
+//                     <div class="p-4 rounded-lg bg-blue-50 md:p-6 dark:bg-gray-800">
+//                         <span class="inline-block p-3 text-blue-500 rounded-lg bg-blue-100/80 dark:bg-gray-700">
+//                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+//                                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+//                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+//                             </svg>
+//                         </span>
+
+//                         <h2 class="mt-4 text-base font-medium text-gray-800 dark:text-white">Visit us</h2>
+//                         <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Visit our office HQ..</p>
+//                         <p class="mt-2 text-sm text-blue-500 dark:text-blue-400">100 Smith Street Collingwood VIC 3066 AU</p>
+//                     </div>
+
+//                     <div class="p-4 rounded-lg bg-blue-50 md:p-6 dark:bg-gray-800">
+//                         <span class="inline-block p-3 text-blue-500 rounded-lg bg-blue-100/80 dark:bg-gray-700">
+//                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+//                                 <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+//                             </svg>
+//                         </span>
+
+//                         <h2 class="mt-4 text-base font-medium text-gray-800 dark:text-white">Call us</h2>
+//                         <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Mon-Fri from 8am to 5pm.</p>
+//                         <p class="mt-2 text-sm text-blue-500 dark:text-blue-400">+1 (555) 000-0000</p>
+//                     </div>
+//                 </div>
+//             </div>
+//         </section>
+//     )
+// }
+
+// export default ContactUs
 import { faAt, faEarth, faLocationDot, faPhone } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const ContactUs = () => {
     return (
-        <div className="container my-36 mx-auto md:px-6">
-            <section className="mb-32">
-                <div className="container px-6 md:px-12">
-                    <div
-                        className="block rounded-lg bg-[hsla(0,0%,100%,0.7)] px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]  md:py-16 md:px-12 -mt-[100px] backdrop-blur-[30px]">
-                        <div
-                            className="relative h-[150px] text-center">
-                            <h2 className="mx-12 text-3xl">Contact Us:</h2>
-                        </div>
-                        <div className="mb-12 grid gap-x-6 md:grid-cols-2 lg:grid-cols-4">
-                            <div className="mx-auto mb-12 text-center lg:mb-0">
-                                <FontAwesomeIcon icon={faEarth} size="2xl"  className="mx-auto mb-5  text-primary "/>
-                                <h6 className="font-medium">India</h6>
-                            </div>
-                            <div className="mx-auto mb-12 text-center lg:mb-0">
-                                <FontAwesomeIcon icon={faLocationDot} size="2xl"  className="mx-auto mb-5  text-primary "/>
-                                <h6 className="font-medium">Vadodara , 390002</h6>
-                            </div>
-                            <div className="mx-auto mb-12 text-center lg:mb-0">
-                                <FontAwesomeIcon icon={faPhone} size="2xl"  className="mx-auto mb-5  text-primary "/>
-                                <h6 className="font-medium">+ 91 123456789</h6>
-                            </div>
-                            <div className="mx-auto mb-12 text-center lg:mb-0">
-                                <FontAwesomeIcon icon={faAt} size="2xl"  className="mx-auto mb-5  text-primary "/>
-                                <h6 className="font-medium">Email ID: unifoders@gmail.com</h6>
-                            </div>
-                        </div>
-                        <div className="mx-auto max-w-[700px]">
-                            <form>
-                                <div className="relative mb-6" data-te-input-wrapper-init>
-                                    <input type="text"
-                                        className="peer block min-h-[auto] w-full rounded border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                                        id="exampleInput90" placeholder="Name" />
-                                    <label
-                                        className="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none "
-                                        htmlFor="exampleInput90">Name
-                                    </label>
-                                </div>
-                                <div className="relative mb-6" data-te-input-wrapper-init>
-                                    <input type="email"
-                                        className="peer block min-h-[auto] w-full rounded border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                                        id="exampleInput91" placeholder="Email address" />
-                                    <label
-                                        className="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none "
-                                        htmlFor="exampleInput91">Email address
-                                    </label>
-                                </div>
-                                <div className="relative mb-6" data-te-input-wrapper-init>
-                                    <textarea
-                                        className="peer block min-h-[auto] w-full rounded border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                                        id="exampleFormControlTextarea1" rows="3" placeholder="Your message"></textarea>
-                                    <label htmlFor="exampleFormControlTextarea1"
-                                        className="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none ">Message</label>
-                                </div>
-                                <div className="mb-6 inline-block min-h-[1.5rem] justify-center pl-[1.5rem] md:flex">
-                                    <input
-                                        className="relative float-left mt-[0.15rem] mr-[6px] -ml-[1.5rem] h-[1.125rem] w-[1.125rem] appearance-none rounded-[0.25rem] border-[0.125rem] border-solid border-neutral-300 outline-none before:pointer-events-none before:absolute before:h-[0.875rem] before:w-[0.875rem] before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] checked:border-primary checked:bg-primary checked:before:opacity-[0.16] checked:after:absolute checked:after:ml-[0.25rem] checked:after:-mt-px checked:after:block checked:after:h-[0.8125rem] checked:after:w-[0.375rem] checked:after:rotate-45 checked:after:border-[0.125rem] checked:after:border-t-0 checked:after:border-l-0 checked:after:border-solid checked:after:border-white checked:after:bg-transparent checked:after:content-[''] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:shadow-none focus:transition-[border-color_0.2s] focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] focus:after:absolute focus:after:z-[1] focus:after:block focus:after:h-[0.875rem] focus:after:w-[0.875rem] focus:after:rounded-[0.125rem] focus:after:content-[''] checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:after:ml-[0.25rem] checked:focus:after:-mt-px checked:focus:after:h-[0.8125rem] checked:focus:after:w-[0.375rem] checked:focus:after:rotate-45 checked:focus:after:rounded-none checked:focus:after:border-[0.125rem] checked:focus:after:border-t-0 checked:focus:after:border-l-0 checked:focus:after:border-solid checked:focus:after:border-white checked:focus:after:bg-transparent"
-                                        type="checkbox" value="" id="exampleCheck96" defaultChecked/>
-                                    <label className="inline-block pl-[0.15rem] hover:cursor-pointer" htmlFor="exampleCheck96">
-                                        Send me a copy of this message
-                                    </label>
-                                </div>
-                                <button type="button" data-te-ripple-init data-te-ripple-color="light"
-                                    className="inline-block w-full rounded bg-primary px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] ">
-                                    Send
-                                </button>
-                            </form>
-                        </div>
+        <section className="bg-white">
+            <div className="container grid gap-8 px-6 py-12 mx-auto">
+                <div>
+                    <p className="text-xl font-medium text-blue-500">Contact us</p>
+
+                    <h1 className="mt-2 text-xl font-semibold text-gray-800 md:text-3xl">We’d love to hear from you</h1>
+
+                    <p className="mt-3 text-gray-500">Our friendly team is always here to chat.</p>
+                </div>
+
+                <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 ">
+                    <div className="p-4 rounded-lg bg-blue-50 md:p-6">
+                        <span className="inline-block p-3 text-blue-500 rounded-lg bg-blue-100/80">
+                            <FontAwesomeIcon icon={faAt} />
+                        </span>
+
+                        <h2 className="mt-4 text-base font-medium text-gray-800">Chat with us</h2>
+                        <p className="mt-2 text-sm text-gray-500">Speak to our friendly team.</p>
+                        <p className="mt-2 text-sm text-blue-500">unifoders@gmail.com</p>
+                    </div>
+
+                    <div className="p-4 rounded-lg bg-blue-50 md:p-6">
+                        <span className="inline-block p-3 text-blue-500 rounded-lg bg-blue-100/80">
+                            <FontAwesomeIcon icon={faPhone} />
+                        </span>
+
+                        <h2 className="mt-4 text-base font-medium text-gray-800">Call to Support</h2>
+                        <p className="mt-2 text-sm text-gray-500">We’re here to help. Mon-Fri from 8am to 5pm</p>
+                        <p className="mt-2 text-sm text-blue-500">+91 6356185625</p>
+                    </div>
+
+                    <div className="p-4 rounded-lg bg-blue-50 md:p-6">
+                        <span className="inline-block p-3 text-blue-500 rounded-lg bg-blue-100/80">
+                            <FontAwesomeIcon icon={faLocationDot} />
+                        </span>
+
+                        <h2 className="mt-4 text-base font-medium text-gray-800">Visit us</h2>
+                        <p className="mt-2 text-sm text-gray-500">Visit our office HQ..</p>
+                        <p className="mt-2 text-sm text-blue-500">100 Smith Street Collingwood VIC 3066 AU</p>
+                    </div>
+
+                    <div className="p-4 rounded-lg bg-blue-50 md:p-6">
+                        <span className="inline-block p-3 text-blue-500 rounded-lg bg-blue-100/80">
+                            <FontAwesomeIcon icon={faEarth} />
+                        </span>
+
+                        <h2 className="mt-4 text-base font-medium text-gray-800">Get in Touch</h2>
+                        <p className="mt-2 text-sm text-gray-500">Message Us whatever you missing in this website.</p>
+                        <p className="mt-2 text-sm text-blue-500">Send Message (redirect to get in touch contact form website)</p>
                     </div>
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
     )
 }
 
-export default ContactUs
+export default ContactUs;

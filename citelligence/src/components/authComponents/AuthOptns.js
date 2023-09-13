@@ -55,7 +55,7 @@ const ButtonComponent = ({ text, icon, type }) => {
                 // (type == "Email" || type == "Mobile") ? 
                 //     (type == "Email") ? <i className="fa-regular fa-envelope"></i> : (type == "Mobile") ? <i className="fa-solid fa-mobile-screen"></i> : ""
                 // : 
-                    <FontAwesomeIcon width={25} className='mx-2 text-2xl text-[#004fd6]' icon={icon}/>
+                    <FontAwesomeIcon className='mx-2 text-md' icon={icon}/>
             }
             </span>
             <span className={auth.authBtnTxt}>{text}</span>

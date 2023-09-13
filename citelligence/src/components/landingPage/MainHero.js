@@ -19,7 +19,7 @@ const MainHero = () => {
   }
 
   return (
-    <main className="flex flex-col items-center justify-center  w-full gap-10 mt-44">
+    <main className="flex flex-col items-center justify-center w-full gap-10 mt-20">
       <button className='border border-primary px-4 py-3 font-semibold rounded-3xl group hover:scale-105 duration-150'>
         <span className='bg-amber-300 px-4 py-1 rounded-3xl mr-3 text-white'>New</span>
         Get Started with some new schemes

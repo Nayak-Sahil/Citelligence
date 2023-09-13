@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-const withVideos = require('next-videos')
+// const withVideos = require('next-videos')
 const path = require('path')
 
 const nextConfig = {

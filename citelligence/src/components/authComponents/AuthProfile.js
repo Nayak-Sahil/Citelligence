@@ -4,7 +4,16 @@ import { faCircleCheck } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useFormik } from 'formik';
 import { authAccPrfSchema } from '@/schemas/authSchema';
+import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
+
+
 export default function AuthProfile() {
+    const router = useRouter()
+    const session = useSession();
+    if(!session){
+        router.push('/Authentication');
+    }
 
     const fnameInpt = useRef(null);
     const lnameInpt = useRef(null);
@@ -25,7 +34,7 @@ export default function AuthProfile() {
         },
     })
 
-    console.info(authFormik, authFormik.errors);
+    // console.info(authFormik, authFormik.errors);
 
     return (
         <>
@@ -38,7 +47,7 @@ export default function AuthProfile() {
             <div className={auth.prfInptsWrap}>
                 <div className={auth.nameBoxWrap}>
                     <div className={auth.fnameInptWrap}>
-                        <label htmlhtmlFor="fnameInpt">
+                        <label htmlFor="fnameInpt">
                             First Name<span className={auth.rqrdInpt}>*</span>
                         </label>
 
@@ -47,7 +56,7 @@ export default function AuthProfile() {
                         <p className={auth.validtMsg}>{authFormik.errors.fnameInpt}</p>
                     </div>
                     <div className={auth.lnameInptWrap}>
-                        <label htmlhtmlFor="lnameInpt">
+                        <label htmlFor="lnameInpt">
                             Last Name<span className={auth.rqrdInpt}>*</span>
                         </label>
 
@@ -58,7 +67,7 @@ export default function AuthProfile() {
                 </div>
                 <div className={auth.dobBoxWrap}>
                     <div className={auth.dobInptWrap}>
-                        <label htmlhtmlFor="dobInpt">
+                        <label htmlFor="dobInpt">
                             Date of Birth <span className={auth.rqrdInpt}>*</span>
                         </label>
 
@@ -67,12 +76,12 @@ export default function AuthProfile() {
                         <p className={auth.validtMsg}>{authFormik.errors.dobInpt}</p>
                     </div>
                     <div className={auth.zInptWrap}>
-                        <label htmlhtmlFor="zInpt">
+                        <label htmlFor="zInpt">
                             Gender <span className={auth.rqrdInpt}>*</span>
                         </label>
 
                         <select ref={zInpt} className={auth.zSelInpt} name="zSelInpt" id="zSelInpt" value={authFormik.values.zSelInpt} onChange={authFormik.handleChange}>
-                            <option value="none" selected disabled hidden>Select Gender</option>
+                            <option value="none" defaultValue disabled hidden>Select Gender</option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
                             <option value="other">other</option>

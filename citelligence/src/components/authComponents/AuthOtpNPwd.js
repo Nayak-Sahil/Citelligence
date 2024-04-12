@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, { useContext } from 'react'
 import auth from '../../app/styles/auth.module.css'
 import { useFormik } from 'formik';
 import { authPwdSchema } from '@/schemas/authSchema';
@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeftLong, faEllipsis, faKey } from '@fortawesome/free-solid-svg-icons';
 import { faCircleCheck } from '@fortawesome/free-regular-svg-icons';
 import authContext from '@/contexts/AuthContext';
+import { getSession, signIn, useSession } from 'next-auth/react';
 
 export default function AuthOtpNPwd({ isOtpPrcsType, backToAuthPrcs, isFgtPwdPrcs }) {
   // Form Handling:
@@ -18,13 +19,32 @@ export default function AuthOtpNPwd({ isOtpPrcsType, backToAuthPrcs, isFgtPwdPrc
   const authFormik = useFormik({
     initialValues: initValObj,
     validationSchema: validationSchema,
-    onSubmit: (values) => {
+    onSubmit: async (values) => {
       console.info("------ OTP OR PASSWORD Values", values);
-      getAuthContxt.update({ isNewAccDone: true });
 
+      console.log(getAuthContxt.state)
+      const data = await fetch("http://localhost:3000/api/auth/EmailOTP", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          userOTP:values.authOtpInpt,
+        })
+      })
+      const res = await data.json();
+      if (res.ok) {
+        const session = await getSession();
+        if(session.exists){
+          //redirect to dashboard
+        }else{
+          getAuthContxt.update({ isNewAccDone: true });
+        }
+      }else{
+        authFormik.errors.authOtpInpt = res.msg;
+      }
     },
   })
-  console.info(authFormik.errors);
   return (
     <form onSubmit={authFormik.handleSubmit} className={auth.signUpInptWrapper}>
       <p onClick={backToAuthPrcs} className={auth.backToDiffOptBtn}>
@@ -64,13 +84,13 @@ export default function AuthOtpNPwd({ isOtpPrcsType, backToAuthPrcs, isFgtPwdPrc
           value={(isOtpPrcsType) ? authFormik.values.authOtpInpt : authFormik.values.authPwdInpt}
           onChange={authFormik.handleChange} />
         <button>
-            <FontAwesomeIcon icon={faCircleCheck}
-              style={{
-                color: "#343434df",
-                marginRight: "5px",
-                fontSize: "14px"
-              }}
-            />
+          <FontAwesomeIcon icon={faCircleCheck}
+            style={{
+              color: "#343434df",
+              marginRight: "5px",
+              fontSize: "14px"
+            }}
+          />
           Validate</button>
       </fieldset>
       <p className={auth.validtMsg}> {(isOtpPrcsType) ? authFormik.errors.authOtpInpt : authFormik.errors.authPwdInpt}</p>

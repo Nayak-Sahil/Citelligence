@@ -2,6 +2,7 @@
 import Image from 'next/image'
 import citelligenceIcon from '../../../public/Citelligence1.png'
 import React, { useState } from "react";
+import ScrollTo from './ScrollTo';
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -40,37 +41,37 @@ const Navbar = () => {
                 <ul className="block lg:flex">
                   <ListItem
                     navItemStyles="text-dark hover:text-primary"
-                    NavLink="/#"
+                    NavLink="#"
                   >
                     Home
                   </ListItem>
                   <ListItem
                     navItemStyles="text-dark hover:text-primary"
-                    NavLink="/#"
+                    NavLink="services"
                   >
                     Services
                   </ListItem>
                   <ListItem
                     navItemStyles="text-dark hover:text-primary"
-                    NavLink="/#"
+                    NavLink="#"
                   >
                     Emergency Support
                   </ListItem>
                   <ListItem
                     navItemStyles="text-dark hover:text-primary"
-                    NavLink="/#"
+                    NavLink="#"
                   >
                     Know Schemes
                   </ListItem>
                   <ListItem
                     navItemStyles="text-dark hover:text-primary"
-                    NavLink="/#"
+                    NavLink="#"
                   >
                     About Us
                   </ListItem>
                   <ListItem
                     navItemStyles="text-dark hover:text-primary"
-                    NavLink="/#"
+                    NavLink="contact"
                   >
                     Contact Us
                   </ListItem>
@@ -105,12 +106,13 @@ const ListItem = ({ children, navItemStyles, NavLink }) => {
   return (
     <>
       <li>
+        <ScrollTo targetId={NavLink}>
         <a
-          href={NavLink}
-          className={`text-black no-underline flex py-2 text-base font-medium lg:ml-12 lg:inline-flex ${navItemStyles} hover:underline`}
+          className={`text-black no-underline flex py-2 text-base font-medium cursor-pointer lg:ml-12 lg:inline-flex ${navItemStyles} hover:underline`}
         >
           {children}
         </a>
+        </ScrollTo>
       </li>
     </>
   );

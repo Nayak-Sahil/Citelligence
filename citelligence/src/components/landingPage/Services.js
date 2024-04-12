@@ -4,10 +4,10 @@ import scsrv3 from "../../../public/services_img/scsrv 3.png"
 
 export default function Services(props) {
     return (
-        <section className={`flex flex-col align-center justify-center text-gray-600 body-font`}>
-            <div class="text-center mt-10 mb-2">
-                <h1 class="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4">Explore Our Services</h1>
-                <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi pug.</p>
+        <section id='services' className={`flex flex-col align-center justify-center text-gray-600 body-font `}>
+            <div className="text-center mt-10 mb-2">
+                <h1 className="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4">Explore Our Services</h1>
+                <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi pug.</p>
             </div>
             <div className={`container px-5 py-20 mx-auto flex ${props.align} flex-wrap justify-evenly`}>
                 <div className="flex flex-col align-center justify-center lg:w-1/2 w-full mb-10 lg:mb-0 rounded-lg overflow-hidden">
@@ -42,7 +42,7 @@ export default function Services(props) {
                             <div className="h-full w-1 bg-gray-200 pointer-events-none"></div>
                         </div> */}
                         <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary inline-flex items-center justify-center text-white relative z-10">
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-5 h-5" viewBox="0 0 24 24">
+                            <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
                                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
                             </svg>
                         </div>
@@ -56,7 +56,7 @@ export default function Services(props) {
                             <div className="h-full w-1 bg-gray-200 pointer-events-none"></div>
                         </div> */}
                         <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary inline-flex items-center justify-center text-white relative z-10">
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-5 h-5" viewBox="0 0 24 24">
+                            <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
                                 <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
                             </svg>
                         </div>
@@ -70,7 +70,7 @@ export default function Services(props) {
                             <div className="h-full w-1 bg-gray-200 pointer-events-none"></div>
                         </div> */}
                         <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary inline-flex items-center justify-center text-white relative z-10">
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-5 h-5" viewBox="0 0 24 24">
+                            <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
                                 <circle cx="12" cy="5" r="3"></circle>
                                 <path d="M12 22V8M5 12H2a10 10 0 0020 0h-3"></path>
                             </svg>
@@ -82,7 +82,7 @@ export default function Services(props) {
                     </div>
                     <div className="flex relative">
                         <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary inline-flex items-center justify-center text-white relative z-10">
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-5 h-5" viewBox="0 0 24 24">
+                            <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
                                 <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
                                 <path d="M22 4L12 14.01l-3-3"></path>
                             </svg>

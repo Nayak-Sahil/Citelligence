@@ -5,6 +5,7 @@ import authContext from '@/contexts/AuthContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeftLong, faCommentDots, faKey } from '@fortawesome/free-solid-svg-icons';
 import { faCircleCheck } from '@fortawesome/free-regular-svg-icons';
+import { signIn } from 'next-auth/react';
 export default function EmailOMoAuth({ isSignUp, title, description }) {
   const getAuthContxt = useContext(authContext);
 
@@ -20,8 +21,17 @@ export default function EmailOMoAuth({ isSignUp, title, description }) {
   }
 
   // process to OTP for auth
-  const processOtpAuth = () => {
-    setAuthPrcs({ isOtpPrcs: true });
+  const processOtpAuth = async() => {
+    const data = await fetch("http://localhost:3000/api/auth/EmailOTP",{
+      method:"GET",
+      headers:{
+        "Content-Type":"application/json"
+      },
+    })
+    const res = await data.json();
+    if(res.ok){
+      setAuthPrcs({ isOtpPrcs: true });
+    }
   }
 
   // process to password for auth

@@ -7,10 +7,21 @@ import { faFingerprint, faIdCardClip, faMobile, faMobileScreenButton } from '@fo
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-// import next from '../../../public/citelligence1.png'
 import auth from '../../app/styles/auth.module.css'
+import { signIn } from 'next-auth/react'
 
 const AuthOptns = () => {
+    const router = useRouter();
+    const handleGoogle = async () => {
+        await signIn("google", { callbackUrl: `http://localhost:3000/Authentication/Profile` });
+    }
+
+    const handleClick = async (type) => {
+        if (type === "Email" || type === "Mobile") {
+            router.push(`/Authentication/${type}`)
+        }
+    }
+
     return (
         <>
             <div className={auth.authHead}>
@@ -21,11 +32,11 @@ const AuthOptns = () => {
             </div>
 
             <div className={auth.authBtnsWrap}>
-                <ButtonComponent text='Continue with Google' icon={faGoogle} />
-                <ButtonComponent text='Continue with Meripehchaan' icon={faFingerprint} />
+                <ButtonComponent text='Continue with Google' handle={handleGoogle} type={"Google"} icon={faGoogle} />
+                <ButtonComponent text='Continue with Meripehchaan' handle={handleClick} icon={faFingerprint} />
                 {/* <ButtonComponent text='Continue with Aadhar' icon={faIdCardClip} /> */}
-                <ButtonComponent text='Continue with Email' icon={faEnvelope} type={"Email"} />
-                <ButtonComponent text='Continue with Mobile' icon={faMobileScreenButton} type={"Mobile"} />
+                <ButtonComponent text='Continue with Email' handle={handleClick} icon={faEnvelope} type={"Email"} />
+                <ButtonComponent text='Continue with Mobile' handle={handleClick} icon={faMobileScreenButton} type={"Mobile"} />
             </div>
 
             <div className={auth.clientAgreeText}>
@@ -39,26 +50,18 @@ const AuthOptns = () => {
 export default AuthOptns;
 
 
-const ButtonComponent = ({ text, icon, type }) => {
-    const router = useRouter();
-    const handleClick = (type) => {
-        console.log(type);
-        if (type === "Email" || type === "Mobile") {
-            router.push(`/Authentication/${type}`)
-        }
-    }
-
+const ButtonComponent = (props) => {
     return (
-        <button className={auth.authDiffBtns} onClick={() => { handleClick(type) }}>
+        <button className={auth.authDiffBtns} onClick={() => { props.handle(props.type) }}>
             <span className={auth.authBtnIcon}>
-            {
-                // (type == "Email" || type == "Mobile") ? 
-                //     (type == "Email") ? <i className="fa-regular fa-envelope"></i> : (type == "Mobile") ? <i className="fa-solid fa-mobile-screen"></i> : ""
-                // : 
-                    <FontAwesomeIcon className='mx-2 text-md' icon={icon}/>
-            }
+                {
+                    // (type == "Email" || type == "Mobile") ? 
+                    //     (type == "Email") ? <i className="fa-regular fa-envelope"></i> : (type == "Mobile") ? <i className="fa-solid fa-mobile-screen"></i> : ""
+                    // : 
+                    <FontAwesomeIcon className='mx-2 text-md' icon={props.icon} />
+                }
             </span>
-            <span className={auth.authBtnTxt}>{text}</span>
+            <span className={auth.authBtnTxt}>{props.text}</span>
         </button>
     )
 }

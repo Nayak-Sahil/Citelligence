@@ -1,10 +1,13 @@
 const mysql = require('mysql2');
 
-const pool = mysql.createPool({
-  host: 'localhost',        
-  user: 'root',             
-  password: '',     
-  database: 'test' 
-});
+try{
+  module.exports = mysql.createPool({
+    host: 'localhost',        
+    user: 'root',             
+    password: '',     
+    database: 'citelligence' 
+  });
+}catch(error){
+  throw Error("Internal Server Error!");
+}
 
-module.exports = pool;

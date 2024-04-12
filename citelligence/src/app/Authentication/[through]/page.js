@@ -10,7 +10,7 @@ const page = ({ params }) => {
   const through = params.through;
   return (
     <>
-      {through !== "Email" && through !== "Mobile" ?
+      {through !== "Email" && through !== "Mobile" && through !== "Profile" ?
         <div>404:Page Not Found</div>
         :
         <main className={auth.emailAuthWrap}>
